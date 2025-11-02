@@ -100,53 +100,53 @@ const Week1Vocab = () => {
   const progress = Math.round((checkedCount / totalItems) * 100);
 
   return (
-    <div className="bg-gradient-to-br from-blue-50 to-purple-50 min-h-screen p-8">
+    <div className="bg-gradient-to-br from-blue-50 to-purple-50 min-h-screen p-4 sm:p-6 lg:p-8">
       <div className="max-w-5xl mx-auto">
         
-        <div className="mb-6">
-          <Link to="/" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-semibold">
+        <div className="mb-4 sm:mb-6">
+          <Link to="/" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-semibold text-sm sm:text-base">
             <Home size={20} /> 메인으로
           </Link>
         </div>
 
-        <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-10 rounded-2xl shadow-2xl mb-8">
-          <h1 className="text-5xl font-bold mb-3">📚 Week 1 단어장</h1>
-          <h2 className="text-3xl font-semibold mb-4">필수 암기 단어 & 표현</h2>
-          <div className="bg-white/20 p-4 rounded-lg">
-            <p className="text-xl">✅ 체크박스 클릭해서 외운 단어 표시</p>
-            <p className="text-lg mt-2">🎯 목표: 100% 암기!</p>
+        <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-6 sm:p-8 lg:p-10 rounded-2xl shadow-2xl mb-6 sm:mb-8">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3">📚 Week 1 단어장</h1>
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-3 sm:mb-4">필수 암기 단어 & 표현</h2>
+          <div className="bg-white/20 p-3 sm:p-4 rounded-lg">
+            <p className="text-base sm:text-lg lg:text-xl">✅ 체크박스 클릭해서 외운 단어 표시</p>
+            <p className="text-sm sm:text-base lg:text-lg mt-2">🎯 목표: 100% 암기!</p>
           </div>
         </div>
 
         {/* Progress */}
-        <div className="bg-white rounded-2xl shadow-xl p-8 mb-6">
-          <h3 className="text-3xl font-bold text-indigo-700 mb-4 flex items-center gap-2">
-            <Star className="text-yellow-500" size={32} /> 암기 진도
+        <div className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 mb-6">
+          <h3 className="text-2xl sm:text-3xl font-bold text-indigo-700 mb-4 flex items-center gap-2">
+            <Star className="text-yellow-500" size={28} /> 암기 진도
           </h3>
-          <div className="flex items-center gap-4">
-            <div className="flex-1 bg-gray-200 rounded-full h-10">
+          <div className="flex items-center gap-3 sm:gap-4">
+            <div className="flex-1 bg-gray-200 rounded-full h-8 sm:h-10">
               <div 
-                className="bg-gradient-to-r from-green-400 to-green-600 h-10 rounded-full transition-all duration-500 flex items-center justify-center"
+                className="bg-gradient-to-r from-green-400 to-green-600 h-8 sm:h-10 rounded-full transition-all duration-500 flex items-center justify-center"
                 style={{ width: `${progress}%` }}
               >
-                <span className="text-white font-bold text-lg">
+                <span className="text-white font-bold text-sm sm:text-lg">
                   {checkedCount} / {totalItems}
                 </span>
               </div>
             </div>
-            <span className="text-3xl font-bold text-indigo-700">{progress}%</span>
+            <span className="text-2xl sm:text-3xl font-bold text-indigo-700">{progress}%</span>
           </div>
           {progress === 100 && (
-            <div className="mt-4 bg-green-50 border-2 border-green-400 p-4 rounded-lg text-center">
-              <p className="text-2xl font-bold text-green-700">🎉 완벽! 모든 단어를 외웠어요!</p>
+            <div className="mt-4 bg-green-50 border-2 border-green-400 p-3 sm:p-4 rounded-lg text-center">
+              <p className="text-lg sm:text-2xl font-bold text-green-700">🎉 완벽! 모든 단어를 외웠어요!</p>
             </div>
           )}
         </div>
 
         {/* Vocabulary */}
         {vocabulary.map((section, sectionIdx) => (
-          <div key={sectionIdx} className="bg-white rounded-2xl shadow-xl p-8 mb-6 border-4 border-blue-300">
-            <h3 className="text-3xl font-bold text-blue-700 mb-6 border-b-4 border-blue-300 pb-3">
+          <div key={sectionIdx} className="bg-white rounded-2xl shadow-xl p-4 sm:p-6 lg:p-8 mb-6 border-4 border-blue-300">
+            <h3 className="text-2xl sm:text-3xl font-bold text-blue-700 mb-4 sm:mb-6 border-b-4 border-blue-300 pb-3">
               {section.category} ({section.items.length}개)
             </h3>
             
@@ -156,44 +156,44 @@ const Week1Vocab = () => {
                 return (
                   <div 
                     key={id}
-                    className={`border-2 rounded-xl p-6 transition-all ${
+                    className={`border-2 rounded-xl p-4 sm:p-6 transition-all ${
                       checkedItems[id] 
                         ? 'bg-green-50 border-green-400' 
                         : 'bg-blue-50 border-blue-300 hover:shadow-md'
                     }`}
                   >
-                    <div className="flex items-start gap-4">
+                    <div className="flex items-start gap-3 sm:gap-4">
                       <button
                         onClick={() => toggleCheck(id)}
-                        className={`flex-shrink-0 w-10 h-10 rounded-lg border-2 flex items-center justify-center transition-all ${
+                        className={`flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-lg border-2 flex items-center justify-center transition-all ${
                           checkedItems[id]
                             ? 'bg-green-500 border-green-500'
                             : 'bg-white border-blue-300 hover:bg-blue-600 hover:border-blue-600 hover:text-white'
                         }`}
                       >
-                        {checkedItems[id] && <Check className="text-white" size={24} />}
+                        {checkedItems[id] && <Check className="text-white" size={20} />}
                       </button>
                       
                       <div className="flex-1">
-                        <div className="mb-3 flex items-center justify-between">
-                          <span className="text-3xl font-bold text-gray-900">{item.word}</span>
-                          <span className="text-sm text-orange-600">{item.freq}</span>
+                        <div className="mb-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                          <span className="text-2xl sm:text-3xl font-bold text-gray-900">{item.word}</span>
+                          <span className="text-xs sm:text-sm text-orange-600">{item.freq}</span>
                         </div>
                         
                         <div className="mb-3">
-                          <span className="text-2xl text-gray-700">= {item.meaning}</span>
+                          <span className="text-xl sm:text-2xl text-gray-700">= {item.meaning}</span>
                         </div>
                         
-                        <div className="bg-purple-50 px-4 py-2 rounded-lg inline-block mb-3 border border-purple-300">
-                          <span className="text-lg flex items-center gap-2">
-                            <Volume2 size={20} className="text-purple-700" />
+                        <div className="bg-purple-50 px-3 sm:px-4 py-2 rounded-lg inline-block mb-3 border border-purple-300">
+                          <span className="text-base sm:text-lg flex items-center gap-2">
+                            <Volume2 size={18} className="text-purple-700" />
                             <span className="font-bold">{item.pronunciation}</span>
                           </span>
                         </div>
                         
                         <div className="bg-blue-50 p-3 rounded-lg border-l-4 border-blue-400">
-                          <span className="text-base font-semibold text-blue-700">예문:</span>
-                          <p className="text-lg mt-1">{item.example}</p>
+                          <span className="text-sm sm:text-base font-semibold text-blue-700">예문:</span>
+                          <p className="text-base sm:text-lg mt-1">{item.example}</p>
                         </div>
                       </div>
                     </div>
@@ -205,18 +205,18 @@ const Week1Vocab = () => {
         ))}
 
         {/* Phrases */}
-        <div className="bg-gradient-to-r from-orange-50 to-red-50 rounded-2xl shadow-xl p-8 mb-6 border-4 border-orange-300">
-          <h3 className="text-3xl font-bold text-orange-700 mb-6 border-b-4 border-orange-300 pb-3">
-            🔥 핵심 구문 (통째로 외우기!) ({phrases.length}개)
+        <div className="bg-gradient-to-r from-orange-50 to-red-50 rounded-2xl shadow-xl p-4 sm:p-6 lg:p-8 mb-6 border-4 border-orange-300">
+          <h3 className="text-2xl sm:text-3xl font-bold text-orange-700 mb-4 sm:mb-6 border-b-4 border-orange-300 pb-3">
+            🔥 핵심 구문 ({phrases.length}개)
           </h3>
           
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {phrases.map((item, idx) => (
-              <div key={idx} className="bg-white p-5 rounded-xl shadow-md border-2 border-orange-200">
-                <p className="text-2xl font-bold text-orange-700 mb-2">"{item.phrase}"</p>
-                <p className="text-xl text-gray-700 mb-2">= {item.meaning}</p>
+              <div key={idx} className="bg-white p-4 sm:p-5 rounded-xl shadow-md border-2 border-orange-200">
+                <p className="text-lg sm:text-2xl font-bold text-orange-700 mb-2">"{item.phrase}"</p>
+                <p className="text-base sm:text-xl text-gray-700 mb-2">= {item.meaning}</p>
                 <div className="bg-orange-50 px-3 py-2 rounded border border-orange-200">
-                  <p className="text-base text-orange-600 flex items-center gap-2">
+                  <p className="text-sm sm:text-base text-orange-600 flex items-center gap-2">
                     <Volume2 size={16} /> {item.pronunciation}
                   </p>
                 </div>
@@ -226,22 +226,22 @@ const Week1Vocab = () => {
         </div>
 
         {/* Study Tips */}
-        <div className="bg-gradient-to-r from-purple-100 to-pink-100 rounded-2xl shadow-xl p-8 mb-6">
-          <h3 className="text-3xl font-bold text-purple-700 mb-6">💡 암기 팁</h3>
+        <div className="bg-gradient-to-r from-purple-100 to-pink-100 rounded-2xl shadow-xl p-4 sm:p-6 lg:p-8 mb-6">
+          <h3 className="text-2xl sm:text-3xl font-bold text-purple-700 mb-4 sm:mb-6">💡 암기 팁</h3>
           
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white p-6 rounded-xl border-2 border-purple-200">
-              <h4 className="text-xl font-bold mb-3 text-purple-700">✍️ 쓰면서 외우기</h4>
-              <ul className="space-y-2 text-lg">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+            <div className="bg-white p-4 sm:p-6 rounded-xl border-2 border-purple-200">
+              <h4 className="text-lg sm:text-xl font-bold mb-3 text-purple-700">✍️ 쓰면서 외우기</h4>
+              <ul className="space-y-2 text-base sm:text-lg">
                 <li>• 단어 5번씩 쓰기</li>
                 <li>• 예문 따라 쓰기</li>
                 <li>• 자기만의 예문 만들기</li>
               </ul>
             </div>
             
-            <div className="bg-white p-6 rounded-xl border-2 border-purple-200">
-              <h4 className="text-xl font-bold mb-3 text-purple-700">🗣️ 말하면서 외우기</h4>
-              <ul className="space-y-2 text-lg">
+            <div className="bg-white p-4 sm:p-6 rounded-xl border-2 border-purple-200">
+              <h4 className="text-lg sm:text-xl font-bold mb-3 text-purple-700">🗣️ 말하면서 외우기</h4>
+              <ul className="space-y-2 text-base sm:text-lg">
                 <li>• 발음 10번씩 따라하기</li>
                 <li>• 녹음해서 들어보기</li>
                 <li>• 큰 소리로 읽기!</li>
@@ -251,10 +251,10 @@ const Week1Vocab = () => {
         </div>
 
         {/* Weekly Schedule */}
-        <div className="bg-white rounded-2xl shadow-xl p-8 mb-6">
-          <h3 className="text-3xl font-bold text-indigo-700 mb-6">📅 매일 암기 스케줄</h3>
+        <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-6 lg:p-8 mb-6">
+          <h3 className="text-2xl sm:text-3xl font-bold text-indigo-700 mb-4 sm:mb-6">📅 매일 암기 스케줄</h3>
           
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             {[
               { day: "월요일", focus: "필수 인사 + 자기소개", count: "10개" },
               { day: "화요일", focus: "리액션 표현 (긍정)", count: "7개" },
@@ -264,13 +264,13 @@ const Week1Vocab = () => {
               { day: "토요일", focus: "전체 복습", count: "전체" },
               { day: "일요일", focus: "테스트", count: "전체" }
             ].map((item, idx) => (
-              <div key={idx} className="bg-blue-50 p-5 rounded-xl border-2 border-blue-200">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <span className="text-2xl font-bold text-gray-900">{item.day}</span>
-                    <p className="text-lg text-gray-700 mt-1">{item.focus}</p>
+              <div key={idx} className="bg-blue-50 p-4 sm:p-5 rounded-xl border-2 border-blue-200">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-0">
+                  <div className="flex-1">
+                    <span className="text-xl sm:text-2xl font-bold text-gray-900 block">{item.day}</span>
+                    <p className="text-base sm:text-lg text-gray-700 mt-1">{item.focus}</p>
                   </div>
-                  <span className="text-xl font-bold text-blue-700 bg-white px-4 py-2 rounded-lg">
+                  <span className="text-lg sm:text-xl font-bold text-blue-700 bg-white px-3 sm:px-4 py-2 rounded-lg">
                     {item.count}
                   </span>
                 </div>
@@ -280,13 +280,13 @@ const Week1Vocab = () => {
         </div>
 
         {/* Footer */}
-        <div className="bg-gradient-to-r from-gray-800 to-gray-900 text-white p-6 rounded-2xl text-center">
-          <div className="flex justify-between items-center mb-3">
-            <Link to="/" className="text-blue-300 hover:text-blue-100">← 메인</Link>
-            <p className="text-xl">🎯 목표: 모든 단어 완벽 암기!</p>
-            <Link to="/week1-lesson" className="text-orange-300 hover:text-orange-100">수업자료 →</Link>
+        <div className="bg-gradient-to-r from-gray-800 to-gray-900 text-white p-4 sm:p-6 rounded-2xl text-center">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-3 mb-3">
+            <Link to="/" className="text-blue-300 hover:text-blue-100 text-sm sm:text-base">← 메인</Link>
+            <p className="text-lg sm:text-xl">🎯 목표: 모든 단어 완벽 암기!</p>
+            <Link to="/week1-lesson" className="text-orange-300 hover:text-orange-100 text-sm sm:text-base">수업자료 →</Link>
           </div>
-          <p className="text-sm text-gray-400">진도는 자동 저장됩니다 (총 {totalItems}개)</p>
+          <p className="text-xs sm:text-sm text-gray-400">진도는 자동 저장됩니다 (총 {totalItems}개)</p>
         </div>
 
       </div>
