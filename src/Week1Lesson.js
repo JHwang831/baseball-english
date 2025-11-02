@@ -144,11 +144,11 @@ const Week1Lesson = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-4">
               <div className="bg-blue-50 p-4 rounded-xl">
                 <h4 className="font-bold mb-2 text-sm sm:text-base">투수 예시</h4>
                 <div className="bg-white p-3 rounded text-xs sm:text-sm space-y-1">
-                  <p>"Hey, I'm Minho."</p>
+                  <p>"Hey, I'm Junseok."</p>
                   <p>"I'm from Seoul, South Korea."</p>
                   <p>"I'm a pitcher."</p>
                   <p>"I've been playing for about 8 years."</p>
@@ -297,11 +297,10 @@ const Week1Lesson = () => {
 
         <div className="bg-gray-800 text-white p-4 sm:p-6 rounded-b-2xl flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0">
           <Link to="/" className="text-blue-300 hover:text-blue-100 text-sm sm:text-base">← 메인</Link>
-          <p className="text-lg sm:text-xl">⚾ Week 2 준비중</p>
           <Link to="/week1-vocab" className="text-purple-300 hover:text-purple-100 text-sm sm:text-base">단어장 →</Link>
         </div>
 
-      </div>
+        </div>
     </div>
   );
 };

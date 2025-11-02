@@ -1,8 +1,53 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight, Calendar, BookOpen, Target, CheckCircle, Lock } from 'lucide-react';
+import { ChevronRight, Calendar, BookOpen, Target, CheckCircle, Lock, Check } from 'lucide-react';
 
 const MainPage = () => {
+  // 완료한 주차 상태 관리
+  const [completedWeeks, setCompletedWeeks] = useState(() => {
+    const saved = localStorage.getItem('completed-weeks');
+    return saved ? JSON.parse(saved) : {};
+  });
+
+  // 완료한 주차 저장
+  useEffect(() => {
+    localStorage.setItem('completed-weeks', JSON.stringify(completedWeeks));
+  }, [completedWeeks]);
+
+  // 주차 완료 토글
+  const toggleWeekCompletion = (week) => {
+    setCompletedWeeks(prev => ({
+      ...prev,
+      [week]: !prev[week]
+    }));
+  };
+
+  // 완료한 주차 수 계산
+  const completedWeeksCount = Object.values(completedWeeks).filter(Boolean).length;
+
+  // 학습한 단어 수 계산
+  const getLearnedVocabCount = () => {
+    let total = 0;
+    
+    // Week 1 단어 (41개)
+    const week1 = localStorage.getItem('week1-vocab-progress');
+    if (week1) {
+      const week1Checked = JSON.parse(week1);
+      total += Object.values(week1Checked).filter(Boolean).length;
+    }
+    
+    // Week 2 단어 (54개)
+    const week2 = localStorage.getItem('week2-vocab-progress');
+    if (week2) {
+      const week2Checked = JSON.parse(week2);
+      total += Object.values(week2Checked).filter(Boolean).length;
+    }
+    
+    return total;
+  };
+
+  const learnedVocab = getLearnedVocabCount();
+
   const curriculum = [
     {
       week: 1,
@@ -12,34 +57,33 @@ const MainPage = () => {
       difficulty: "⭐⭐☆☆☆",
       duration: "30-40분",
       status: "available",
-      vocab: 62
+      vocab: 41
     },
     {
       week: 2,
       title: "연습장에서 코치 지시 이해하기",
       subtitle: "명령문, 축약형, 야구 용어",
-      topics: ["코치 명령문", "연습 용어", "피드백 받기", "질문하는 법"],
+      topics: ["코치 명령문", "연습 용어", "피드백 받기", "질문하는 법", "야구 동작 표현"],
       difficulty: "⭐⭐⭐☆☆",
-      duration: "30-40분",
-      status: "coming",
-      vocab: 50
+      duration: "40-50분",
+      status: "available",
+      vocab: 54
     }
   ];
 
   const progress = {
     totalWeeks: 36,
-    completedWeeks: 0,
-    currentWeek: 1,
+    completedWeeks: completedWeeksCount,
+    currentWeek: completedWeeksCount + 1,
     totalVocab: 2500,
-    learnedVocab: 0
+    learnedVocab: learnedVocab
   };
 
   const studentInfo = {
-    name: "동생",
+    name: "황준석",
     position: "투수 (Pitcher)",
     startDate: "2024년 11월",
-    targetDate: "2026년 8월",
-    daysLeft: 640
+    targetDate: "2026년 8월"
   };
 
   return (
@@ -61,7 +105,7 @@ const MainPage = () => {
 
           {/* Student Info */}
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6">
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
               <div className="text-center sm:text-left">
                 <p className="text-blue-200 text-xs sm:text-sm mb-1">학습자</p>
                 <p className="text-xl sm:text-2xl font-bold">{studentInfo.name}</p>
@@ -70,13 +114,9 @@ const MainPage = () => {
                 <p className="text-blue-200 text-xs sm:text-sm mb-1">포지션</p>
                 <p className="text-xl sm:text-2xl font-bold">{studentInfo.position}</p>
               </div>
-              <div className="text-center sm:text-left">
+              <div className="text-center sm:text-left col-span-2 sm:col-span-1">
                 <p className="text-blue-200 text-xs sm:text-sm mb-1">출국일</p>
                 <p className="text-xl sm:text-2xl font-bold">{studentInfo.targetDate}</p>
-              </div>
-              <div className="text-center sm:text-left">
-                <p className="text-blue-200 text-xs sm:text-sm mb-1">남은 기간</p>
-                <p className="text-xl sm:text-2xl font-bold">{studentInfo.daysLeft}일</p>
               </div>
             </div>
           </div>
@@ -85,7 +125,7 @@ const MainPage = () => {
 
       {/* Progress Dashboard */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
           <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-6">
             <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
               <div className="bg-blue-100 p-2 sm:p-3 rounded-full">
@@ -121,19 +161,6 @@ const MainPage = () => {
               />
             </div>
           </div>
-
-          <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-6 sm:col-span-2 lg:col-span-1">
-            <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
-              <div className="bg-purple-100 p-2 sm:p-3 rounded-full">
-                <Target className="text-purple-600" size={24} />
-              </div>
-              <div>
-                <p className="text-gray-600 text-xs sm:text-sm">이번 주 목표</p>
-                <p className="text-xl sm:text-2xl font-bold text-gray-900">Week 1 완료</p>
-              </div>
-            </div>
-            <p className="text-xs sm:text-sm text-gray-600">자기소개 & 첫 대화 마스터</p>
-          </div>
         </div>
 
         {/* Curriculum List */}
@@ -150,54 +177,70 @@ const MainPage = () => {
               <div 
                 key={week.week}
                 className={`border-2 rounded-xl p-4 sm:p-6 transition-all ${
-                  week.status === 'available' 
+                  completedWeeks[week.week]
+                    ? 'border-green-300 bg-green-50'
+                    : week.status === 'available' 
                     ? 'border-blue-300 bg-blue-50 hover:shadow-lg' 
                     : 'border-gray-200 bg-gray-50'
                 }`}
               >
                 <div className="flex flex-col gap-4">
-                  <div className="flex-1">
-                    <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-3">
-                      <span className="bg-blue-600 text-white px-3 sm:px-4 py-1 sm:py-2 rounded-full font-bold text-sm sm:text-lg">
-                        Week {week.week}
-                      </span>
-                      {week.status === 'available' ? (
-                        <CheckCircle className="text-green-600" size={20} />
-                      ) : (
-                        <Lock className="text-gray-400" size={20} />
-                      )}
-                      <span className="text-xs sm:text-sm text-gray-600">{week.difficulty}</span>
-                      <span className="text-xs sm:text-sm text-gray-600">⏱️ {week.duration}</span>
-                    </div>
+                  <div className="flex items-start gap-3">
+                    {/* 체크박스 */}
+                    <button
+                      onClick={() => toggleWeekCompletion(week.week)}
+                      className={`flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-lg border-2 flex items-center justify-center transition-all ${
+                        completedWeeks[week.week]
+                          ? 'bg-green-500 border-green-500'
+                          : 'bg-white border-gray-300 hover:border-blue-500'
+                      }`}
+                    >
+                      {completedWeeks[week.week] && <Check className="text-white" size={20} />}
+                    </button>
 
-                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">{week.title}</h3>
-                    <p className="text-base sm:text-lg text-gray-600 mb-3 sm:mb-4">{week.subtitle}</p>
-
-                    <div className="flex flex-wrap gap-2 mb-3 sm:mb-4">
-                      {week.topics.map((topic, idx) => (
-                        <span 
-                          key={idx}
-                          className="bg-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-blue-200 text-blue-700"
-                        >
-                          {topic}
+                    <div className="flex-1">
+                      <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-3">
+                        <span className="bg-blue-600 text-white px-3 sm:px-4 py-1 sm:py-2 rounded-full font-bold text-sm sm:text-lg">
+                          Week {week.week}
                         </span>
-                      ))}
-                    </div>
+                        {week.status === 'available' ? (
+                          <CheckCircle className="text-green-600" size={20} />
+                        ) : (
+                          <Lock className="text-gray-400" size={20} />
+                        )}
+                        <span className="text-xs sm:text-sm text-gray-600">{week.difficulty}</span>
+                        <span className="text-xs sm:text-sm text-gray-600">⏱️ {week.duration}</span>
+                      </div>
 
-                    <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm text-gray-600">
-                      <span>📝 {week.vocab}개 단어/표현</span>
-                      {week.status === 'available' && (
-                        <>
-                          <span>•</span>
-                          <span className="text-green-600 font-semibold">✅ 수업 가능</span>
-                        </>
-                      )}
+                      <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">{week.title}</h3>
+                      <p className="text-base sm:text-lg text-gray-600 mb-3 sm:mb-4">{week.subtitle}</p>
+
+                      <div className="flex flex-wrap gap-2 mb-3 sm:mb-4">
+                        {week.topics.map((topic, idx) => (
+                          <span 
+                            key={idx}
+                            className="bg-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-blue-200 text-blue-700"
+                          >
+                            {topic}
+                          </span>
+                        ))}
+                      </div>
+
+                      <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm text-gray-600">
+                        <span>📝 {week.vocab}개 단어/표현</span>
+                        {week.status === 'available' && (
+                          <>
+                            <span>•</span>
+                            <span className="text-green-600 font-semibold">✅ 수업 가능</span>
+                          </>
+                        )}
+                      </div>
                     </div>
                   </div>
 
                   {week.status === 'available' && (
                     <Link 
-                      to="/week1-lesson"
+                      to={`/week${week.week}-lesson`}
                       className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-4 sm:px-6 py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all"
                     >
                       시작하기
@@ -207,43 +250,6 @@ const MainPage = () => {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Quick Links */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
-          <div className="bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl shadow-xl p-6 sm:p-8 text-white">
-            <h3 className="text-xl sm:text-2xl font-bold mb-3">🔥 Week 1 시작하기</h3>
-            <p className="mb-4 text-sm sm:text-base text-orange-100">팀 첫날 생존 영어 - 자기소개 & 첫 대화</p>
-            <div className="space-y-2 mb-4 text-xs sm:text-sm">
-              <p>✅ 62개 필수 단어/표현</p>
-              <p>✅ 10개 자주 묻는 질문</p>
-              <p>✅ 8개 실수 사례 & 해결법</p>
-              <p>✅ 4개 실전 롤플레이</p>
-            </div>
-            <Link 
-              to="/week1-lesson"
-              className="block w-full bg-white text-orange-600 px-4 sm:px-6 py-3 rounded-xl font-bold hover:bg-orange-50 transition-all text-center"
-            >
-              수업자료 보기 →
-            </Link>
-          </div>
-
-          <div className="bg-gradient-to-br from-purple-500 to-indigo-500 rounded-2xl shadow-xl p-6 sm:p-8 text-white">
-            <h3 className="text-xl sm:text-2xl font-bold mb-3">📚 Week 1 단어장</h3>
-            <p className="mb-4 text-sm sm:text-base text-purple-100">체크리스트로 암기 진도 관리</p>
-            <div className="space-y-2 mb-4 text-xs sm:text-sm">
-              <p>✅ 6개 카테고리 단어</p>
-              <p>✅ 8개 핵심 구문</p>
-              <p>✅ 매일 암기 스케줄</p>
-              <p>✅ 진도 자동 저장</p>
-            </div>
-            <Link 
-              to="/week1-vocab"
-              className="block w-full bg-white text-purple-600 px-4 sm:px-6 py-3 rounded-xl font-bold hover:bg-purple-50 transition-all text-center"
-            >
-              단어장 보기 →
-            </Link>
           </div>
         </div>
 

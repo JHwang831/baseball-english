@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import { Check, Volume2, Star, Home } from 'lucide-react';
 
 const Week1Vocab = () => {
-  const [checkedItems, setCheckedItems] = useState({});
-
-  useEffect(() => {
+  // localStorage에서 초기값 직접 불러오기
+  const [checkedItems, setCheckedItems] = useState(() => {
     const saved = localStorage.getItem('week1-vocab-progress');
-    if (saved) setCheckedItems(JSON.parse(saved));
-  }, []);
+    return saved ? JSON.parse(saved) : {};
+  });
 
+  // 체크 상태 변경될 때마다 저장
   useEffect(() => {
     localStorage.setItem('week1-vocab-progress', JSON.stringify(checkedItems));
   }, [checkedItems]);
