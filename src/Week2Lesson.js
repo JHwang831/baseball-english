@@ -159,15 +159,51 @@ const Week2Lesson = () => {
 
             <div className="bg-blue-100 p-4 sm:p-6 rounded-xl mt-6">
               <h4 className="text-lg sm:text-xl font-bold mb-3 flex items-center gap-2">
-                <Play size={20} /> 영상: 코치 지시 듣기
+                <Play size={20} /> 추천 영상 자료
               </h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <a href="https://www.youtube.com/watch?v=2rXPPGczWxY" target="_blank" rel="noopener noreferrer" className="bg-white p-3 rounded text-blue-600 hover:underline text-sm sm:text-base">
-                  Baseball Practice Commands
-                </a>
-                <a href="https://www.youtube.com/watch?v=5XK4v2fgMPU" target="_blank" rel="noopener noreferrer" className="bg-white p-3 rounded text-blue-600 hover:underline text-sm sm:text-base">
-                  Coach Instructions
-                </a>
+              <div className="space-y-3">
+                <div className="bg-white p-4 rounded-lg">
+                  <h5 className="font-bold text-base mb-2">🎯 코치 명령어 & 연습 용어</h5>
+                  <div className="space-y-2 text-sm">
+                    <a href="https://www.youtube.com/@ultimatebaseballtraining" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">
+                      📺 Ultimate Baseball Training - 코치 Justin의 실전 드릴
+                    </a>
+                    <a href="https://www.youtube.com/@AntonelliBaseball" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">
+                      📺 Antonelli Baseball - 매일 업데이트되는 1000+ 영상
+                    </a>
+                  </div>
+                </div>
+                <div className="bg-white p-4 rounded-lg">
+                  <h5 className="font-bold text-base mb-2">⚾ 불펜 & 타격 연습 (BP)</h5>
+                  <div className="space-y-2 text-sm">
+                    <a href="https://www.youtube.com/@yougotmojo" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">
+                      📺 MOJO - 팀 연습 & 개인 드릴
+                    </a>
+                    <a href="https://www.youtube.com/@imgacademy" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">
+                      📺 IMG Academy - 프로 수준 훈련법
+                    </a>
+                  </div>
+                </div>
+                <div className="bg-white p-4 rounded-lg">
+                  <h5 className="font-bold text-base mb-2">🎓 종합 코칭 자료</h5>
+                  <div className="space-y-2 text-sm">
+                    <a href="https://www.youtube.com/@DominateTheDiamond" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">
+                      📺 Dominate The Diamond - 전 프로선수 코치들의 실전 팁
+                    </a>
+                    <a href="https://www.youtube.com/@NorthernBaseballTraining" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">
+                      📺 Northern Baseball Training - 고품질 교육 영상
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-yellow-50 p-3 rounded mt-3 text-sm">
+                <p className="font-semibold mb-1">💡 영상 활용 팁:</p>
+                <ul className="space-y-1 text-xs">
+                  <li>• 자막(CC)을 켜고 반복해서 시청하세요</li>
+                  <li>• 코치의 입모양과 발음에 집중하세요</li>
+                  <li>• 영상 속도를 0.75x로 낮춰서 따라 말하기 연습</li>
+                  <li>• 각 채널에서 "baseball drills", "coach commands" 검색</li>
+                </ul>
               </div>
             </div>
           </section>
