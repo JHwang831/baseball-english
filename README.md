@@ -1,70 +1,121 @@
-# Getting Started with Create React App
+# Baseball English
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A comprehensive web-based learning platform designed to help Korean baseball players master practical English for American college baseball teams.
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+Baseball English is a 36-week curriculum focused on real-world communication skills needed for success in American baseball environments. The program covers everything from first-day survival phrases to advanced tactical terminology, emphasizing conversational English, slang, and baseball-specific jargon that players encounter daily.
 
-### `npm start`
+## Target Audience
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This program was developed specifically for Korean baseball players preparing to join American college teams, with a focus on practical, field-ready communication rather than traditional classroom English.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- **36-Week Structured Curriculum**: Progressive learning path from basic survival English to advanced tactical communication
+- **Interactive Vocabulary Lists**: Track learning progress with built-in checkbox system and local storage
+- **250+ Essential Terms**: Carefully curated vocabulary and expressions used in real baseball contexts
+- **Position-Specific Guidance**: Tailored content for pitchers, catchers, infielders, and outfielders
+- **Real-World Scenarios**: Practical conversation examples from locker rooms, practice fields, and team meetings
+- **Progress Tracking**: Monitor completion rates for both lessons and vocabulary
+- **Mobile-Responsive Design**: Access learning materials on any device
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technology Stack
 
-### `npm run build`
+- React 18
+- React Router v6
+- Tailwind CSS
+- Lucide React Icons
+- Local Storage for progress persistence
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Current Progress
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Phase 1: Baseball Field Survival Kit (Weeks 1-12)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Completed Weeks:**
 
-### `npm run eject`
+- **Week 1**: Team First Day Survival English - Self-introductions and first conversations (41 terms)
+- **Week 2**: Understanding Coach Instructions - Commands, abbreviations, and practice terminology (54 terms)
+- **Week 3**: Locker Room Talk - Slang and baseball jargon (50 terms)
+- **Week 4**: Injury and Condition Expression - Communicating physical status (53 terms)
+- **Week 5**: Team Meetings - Tactical terminology and response expressions (52 terms)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**Total**: 250 essential terms across 5 completed weeks (13.9% complete)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/baseball-english.git
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Navigate to project directory
+cd baseball-english
 
-## Learn More
+# Install dependencies
+npm install
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Start development server
+npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The application will open at `http://localhost:3000`
 
-### Code Splitting
+## Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+src/
+├── App.js                 # Main application component with routing
+├── MainPage.js           # Homepage with curriculum overview
+├── BottomNav.js          # Navigation bar component
+├── Week~Lesson.js        # Week ~ lesson content
+├── Week~Vocab.js         # Week ~ vocabulary list
+└── ...                   # To Be Updated
+```
 
-### Analyzing the Bundle Size
+## Learning Approach
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Each week follows a consistent structure:
 
-### Making a Progressive Web App
+1. **Lesson Component**: Detailed explanations, examples, and cultural notes
+2. **Vocabulary Component**: Interactive word lists with pronunciation guides, usage examples, and frequency indicators
+3. **Practice Scenarios**: Real-world conversation examples with Korean translations
+4. **Video Resources**: Curated YouTube channels for visual learning
+5. **Homework Assignments**: Practical exercises to reinforce learning
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+## Progress Tracking
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The application uses browser local storage to save:
+- Completed weeks checkbox status
+- Individual vocabulary item completion
+- Overall learning progress
 
-### Deployment
+Data persists across browser sessions without requiring user accounts.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Upcoming Content
 
-### `npm run build` fails to minify
+**Week 6**: Media Interviews and Public Speaking - Professional communication with press and public
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Weeks 7-12**: Additional Phase 1 content covering game situations, equipment terminology, and facility navigation
+
+**Phases 2-3**: Advanced communication skills, leadership vocabulary, and cultural integration (Weeks 13-36)
+
+## Contributing
+
+This is a personal educational project. However, suggestions for improvements or corrections are welcome through the issues section.
+
+## License
+
+This project is intended for educational purposes.
+
+## Acknowledgments
+
+Developed for my brother, pitcher, preparing for American college baseball in August 2026.
+
+Special consideration given to the unique challenges Korean players face when adapting to American baseball culture and communication styles.
+
+---
+
+**Development Status**: Active development - 5 of 36 weeks complete
+
+**Last Updated**: November 2025

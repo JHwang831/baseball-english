@@ -50,6 +50,20 @@ const MainPage = () => {
       total += Object.values(week3Checked).filter(Boolean).length;
     }
     
+    // Week 4 단어 (53개)
+    const week4 = localStorage.getItem('week4-vocab-progress');
+    if (week4) {
+      const week4Checked = JSON.parse(week4);
+      total += Object.values(week4Checked).filter(Boolean).length;
+    }
+    
+    // Week 5 단어 (52개)
+    const week5 = localStorage.getItem('week5-vocab-progress');
+    if (week5) {
+      const week5Checked = JSON.parse(week5);
+      total += Object.values(week5Checked).filter(Boolean).length;
+    }
+    
     return total;
   };
 
@@ -85,6 +99,26 @@ const MainPage = () => {
       duration: "40-50분",
       status: "available",
       vocab: 50
+    },
+    {
+      week: 4,
+      title: "부상 & 컨디션 표현",
+      subtitle: "I'm feeling sore / My arm's acting up",
+      topics: ["부상 표현 8개", "신체 부위 12개", "트레이너 대화", "컨디션 보고", "예방 팁", "Do's & Don'ts"],
+      difficulty: "⭐⭐⭐☆☆",
+      duration: "40-50분",
+      status: "available",
+      vocab: 53
+    },
+    {
+      week: 5,
+      title: "팀 미팅 - 전술 용어 & 반응 표현",
+      subtitle: "Got it / I'm on it",
+      topics: ["공격 전술 8개", "수비 전술 8개", "미팅 표현", "확인 & 질문", "신호 이해", "실전 시나리오"],
+      difficulty: "⭐⭐⭐⭐☆",
+      duration: "40-50분",
+      status: "available",
+      vocab: 52
     }
   ];
 

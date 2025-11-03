@@ -165,30 +165,19 @@ const Week2Lesson = () => {
                 <div className="bg-white p-4 rounded-lg">
                   <h5 className="font-bold text-base mb-2">🎯 코치 명령어 & 연습 용어</h5>
                   <div className="space-y-2 text-sm">
-                    <a href="https://www.youtube.com/@ultimatebaseballtraining" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">
+                    <a href="https://youtu.be/ydBcOcfUjCo?si=0W1Irp6R7gOmoTLs" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">
                       📺 Ultimate Baseball Training - 코치 Justin의 실전 드릴
                     </a>
-                    <a href="https://www.youtube.com/@AntonelliBaseball" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">
-                      📺 Antonelli Baseball - 매일 업데이트되는 1000+ 영상
-                    </a>
-                  </div>
-                </div>
-                <div className="bg-white p-4 rounded-lg">
-                  <h5 className="font-bold text-base mb-2">⚾ 불펜 & 타격 연습 (BP)</h5>
-                  <div className="space-y-2 text-sm">
-                    <a href="https://www.youtube.com/@yougotmojo" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">
-                      📺 MOJO - 팀 연습 & 개인 드릴
-                    </a>
-                    <a href="https://www.youtube.com/@imgacademy" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">
-                      📺 IMG Academy - 프로 수준 훈련법
+                    <a href="https://youtu.be/G5_QZjr295g?si=P9rGmzOQpyiPShrx" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">
+                      📺 Antonelli Baseball - College Team Meeting 영상
                     </a>
                   </div>
                 </div>
                 <div className="bg-white p-4 rounded-lg">
                   <h5 className="font-bold text-base mb-2">🎓 종합 코칭 자료</h5>
                   <div className="space-y-2 text-sm">
-                    <a href="https://www.youtube.com/@DominateTheDiamond" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">
-                      📺 Dominate The Diamond - 전 프로선수 코치들의 실전 팁
+                    <a href="https://youtu.be/yKEECB9S150?si=2TrEyXIcgIMMQIMJ" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">
+                      📺 전 프로선수 코치들의 실전 팁
                     </a>
                     <a href="https://www.youtube.com/@NorthernBaseballTraining" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">
                       📺 Northern Baseball Training - 고품질 교육 영상

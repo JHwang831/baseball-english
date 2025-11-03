@@ -415,10 +415,10 @@ const Week3Lesson = () => {
                 <div className="bg-white p-4 rounded-lg">
                   <h5 className="font-bold text-base mb-2">🎯 라커룸 문화 & 슬랭</h5>
                   <div className="space-y-2 text-sm">
-                    <a href="https://www.youtube.com/@Jomboy" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">
+                    <a href="https://youtu.be/Zy29UAE0tlI?si=ffmb11IMIj-m76-R" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">
                       📺 Jomboy Media - 야구 문화 & 재미있는 해설
                     </a>
-                    <a href="https://www.youtube.com/@MLB" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">
+                    <a href="https://youtu.be/AlX3GGtmAcw?si=jZqZqfz1Wo3LPAJI" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">
                       📺 MLB - Behind the Scenes 영상들
                     </a>
                   </div>
@@ -426,10 +426,10 @@ const Week3Lesson = () => {
                 <div className="bg-white p-4 rounded-lg">
                   <h5 className="font-bold text-base mb-2">💬 실제 대화 & 인터뷰</h5>
                   <div className="space-y-2 text-sm">
-                    <a href="https://www.youtube.com/@ultimatebaseballtraining" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">
-                      📺 Ultimate Baseball Training - 선수 인터뷰
+                    <a href="https://youtu.be/fXd7Fh_ujrM?si=gwRyDFRFjBjoo0Zb" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">
+                      📺 MLB - 선수 인터뷰
                     </a>
-                    <a href="https://www.youtube.com/@DominateTheDiamond" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">
+                    <a href="https://youtu.be/6yeQYjcdpT4?si=sQ0Z7CvDfpXIoRIc" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">
                       📺 Dominate The Diamond - 팀 문화 영상
                     </a>
                   </div>
