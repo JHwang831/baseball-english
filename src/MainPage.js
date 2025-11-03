@@ -43,6 +43,13 @@ const MainPage = () => {
       total += Object.values(week2Checked).filter(Boolean).length;
     }
     
+    // Week 3 단어 (50개)
+    const week3 = localStorage.getItem('week3-vocab-progress');
+    if (week3) {
+      const week3Checked = JSON.parse(week3);
+      total += Object.values(week3Checked).filter(Boolean).length;
+    }
+    
     return total;
   };
 
@@ -68,6 +75,16 @@ const MainPage = () => {
       duration: "40-50분",
       status: "available",
       vocab: 54
+    },
+    {
+      week: 3,
+      title: "라커룸 토크 - 슬랭 & 야구 은어",
+      subtitle: "팀원들과 진짜 친해지는 법",
+      topics: ["라커룸 기본 표현", "야구 슬랭 10개", "긍정 에너지", "팀 서포트", "Do's & Don'ts", "라커룸 문화"],
+      difficulty: "⭐⭐⭐☆☆",
+      duration: "40-50분",
+      status: "available",
+      vocab: 50
     }
   ];
 

@@ -18,6 +18,7 @@ const BottomNav = () => {
   const getCurrentWeek = () => {
     if (location.pathname.includes('week1')) return 1;
     if (location.pathname.includes('week2')) return 2;
+    if (location.pathname.includes('week3')) return 3;
     return null;
   };
 

@@ -5,6 +5,8 @@ import Week1Lesson from './Week1Lesson';
 import Week1Vocab from './Week1Vocab';
 import Week2Lesson from './Week2Lesson';
 import Week2Vocab from './Week2Vocab';
+import Week3Lesson from './Week3Lesson';
+import Week3Vocab from './Week3Vocab';
 import BottomNav from './BottomNav';
 import './App.css';
 
@@ -30,6 +32,8 @@ function App() {
           <Route path="/week1-vocab" element={<Week1Vocab />} />
           <Route path="/week2-lesson" element={<Week2Lesson />} />
           <Route path="/week2-vocab" element={<Week2Vocab />} />
+          <Route path="/week3-lesson" element={<Week3Lesson />} />
+          <Route path="/week3-vocab" element={<Week3Vocab />} />
         </Routes>
       </div>
       <BottomNav />
