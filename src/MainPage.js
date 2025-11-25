@@ -29,39 +29,13 @@ const MainPage = () => {
   const getLearnedVocabCount = () => {
     let total = 0;
     
-    // Week 1 단어 (41개)
-    const week1 = localStorage.getItem('week1-vocab-progress');
-    if (week1) {
-      const week1Checked = JSON.parse(week1);
-      total += Object.values(week1Checked).filter(Boolean).length;
-    }
-    
-    // Week 2 단어 (54개)
-    const week2 = localStorage.getItem('week2-vocab-progress');
-    if (week2) {
-      const week2Checked = JSON.parse(week2);
-      total += Object.values(week2Checked).filter(Boolean).length;
-    }
-    
-    // Week 3 단어 (50개)
-    const week3 = localStorage.getItem('week3-vocab-progress');
-    if (week3) {
-      const week3Checked = JSON.parse(week3);
-      total += Object.values(week3Checked).filter(Boolean).length;
-    }
-    
-    // Week 4 단어 (53개)
-    const week4 = localStorage.getItem('week4-vocab-progress');
-    if (week4) {
-      const week4Checked = JSON.parse(week4);
-      total += Object.values(week4Checked).filter(Boolean).length;
-    }
-    
-    // Week 5 단어 (52개)
-    const week5 = localStorage.getItem('week5-vocab-progress');
-    if (week5) {
-      const week5Checked = JSON.parse(week5);
-      total += Object.values(week5Checked).filter(Boolean).length;
+    // Week 1-8 단어 카운팅
+    for (let i = 1; i <= 8; i++) {
+      const weekData = localStorage.getItem(`week${i}-vocab-progress`);
+      if (weekData) {
+        const weekChecked = JSON.parse(weekData);
+        total += Object.values(weekChecked).filter(Boolean).length;
+      }
     }
     
     return total;
@@ -119,6 +93,36 @@ const MainPage = () => {
       duration: "40-50분",
       status: "available",
       vocab: 52
+    },
+    {
+      week: 6,
+      title: "불펜 세션 - 투수 커뮤니케이션",
+      subtitle: "Pitcher Communication in the Pen",
+      topics: ["구종 콜 6개", "피드백 응답", "컨디션 체크", "메카닉스 용어 7개", "투구 카운팅", "등판 계획"],
+      difficulty: "⭐⭐⭐⭐☆",
+      duration: "40-50분",
+      status: "available",
+      vocab: 47
+    },
+    {
+      week: 7,
+      title: "마운드 커뮤니케이션 - 게임 중 대화",
+      subtitle: "Mound Communication During Games",
+      topics: ["포수 마운드 방문", "구종 선택", "견제구 대화", "코치 질문", "내야수 콜", "경기 중 짧은 콜"],
+      difficulty: "⭐⭐⭐⭐☆",
+      duration: "40-50분",
+      status: "available",
+      vocab: 54
+    },
+    {
+      week: 8,
+      title: "경기 전 루틴 - Pre-Game Preparation",
+      subtitle: "Pre-Game Routine & Communication",
+      topics: ["워밍업 대화", "암 케어", "게임 플랜", "라커룸 준비", "멘탈 준비", "타이밍 체크", "포수 싱크"],
+      difficulty: "⭐⭐⭐⭐☆",
+      duration: "40-50분",
+      status: "available",
+      vocab: 55
     }
   ];
 

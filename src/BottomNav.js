@@ -21,6 +21,9 @@ const BottomNav = () => {
     if (location.pathname.includes('week3')) return 3;
     if (location.pathname.includes('week4')) return 4;
     if (location.pathname.includes('week5')) return 5;
+    if (location.pathname.includes('week6')) return 6;
+    if (location.pathname.includes('week7')) return 7;
+    if (location.pathname.includes('week8')) return 8;
     return null;
   };
 
@@ -40,7 +43,7 @@ const BottomNav = () => {
   const navItems = getNavItems();
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-gray-200 shadow-lg z-50">
+    <nav className="fixed bottom-0 left-0 right-0 bg-white/60 backdrop-blur-md border-t border-gray-200/30 shadow-lg z-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-around items-center py-3">
           {navItems.map((item) => {
@@ -56,6 +59,7 @@ const BottomNav = () => {
                     ? 'bg-blue-100 text-blue-600' 
                     : 'text-gray-600 hover:bg-gray-100'
                 }`}
+                style={{ textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}
               >
                 <Icon size={24} />
                 <span className="text-xs sm:text-sm font-medium mt-1">{item.label}</span>

@@ -11,6 +11,12 @@ import Week4Lesson from './Week4Lesson';
 import Week4Vocab from './Week4Vocab';
 import Week5Lesson from './Week5Lesson';
 import Week5Vocab from './Week5Vocab';
+import Week6Lesson from './Week6Lesson';
+import Week6Vocab from './Week6Vocab';
+import Week7Lesson from './Week7Lesson';
+import Week7Vocab from './Week7Vocab';
+import Week8Lesson from './Week8Lesson';
+import Week8Vocab from './Week8Vocab';
 import BottomNav from './BottomNav';
 import './App.css';
 
@@ -42,6 +48,12 @@ function App() {
           <Route path="/week4-vocab" element={<Week4Vocab />} />
           <Route path="/week5-lesson" element={<Week5Lesson />} />
           <Route path="/week5-vocab" element={<Week5Vocab />} />
+          <Route path="/week6-lesson" element={<Week6Lesson />} />
+          <Route path="/week6-vocab" element={<Week6Vocab />} />
+          <Route path="/week7-lesson" element={<Week7Lesson />} />
+          <Route path="/week7-vocab" element={<Week7Vocab />} />
+          <Route path="/week8-lesson" element={<Week8Lesson />} />
+          <Route path="/week8-vocab" element={<Week8Vocab />} />
         </Routes>
       </div>
       <BottomNav />
