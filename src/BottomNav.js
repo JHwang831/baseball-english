@@ -24,6 +24,8 @@ const BottomNav = () => {
     if (location.pathname.includes('week6')) return 6;
     if (location.pathname.includes('week7')) return 7;
     if (location.pathname.includes('week8')) return 8;
+    if (location.pathname.includes('week9')) return 9;
+    if (location.pathname.includes('week10')) return 10;
     return null;
   };
 

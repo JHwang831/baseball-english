@@ -29,8 +29,8 @@ const MainPage = () => {
   const getLearnedVocabCount = () => {
     let total = 0;
     
-    // Week 1-8 단어 카운팅
-    for (let i = 1; i <= 8; i++) {
+    // Week 1-10 단어 카운팅
+    for (let i = 1; i <= 10; i++) {
       const weekData = localStorage.getItem(`week${i}-vocab-progress`);
       if (weekData) {
         const weekChecked = JSON.parse(weekData);
@@ -123,6 +123,26 @@ const MainPage = () => {
       duration: "40-50분",
       status: "available",
       vocab: 55
+    },
+    {
+      week: 9,
+      title: "덕아웃 커뮤니케이션",
+      subtitle: "Dugout Communication & Support",
+      topics: ["카운트 상황", "주자 상황", "투수 평가", "타격 접근", "수비 콜", "압박 상황", "덕아웃 용어"],
+      difficulty: "⭐⭐⭐⭐☆",
+      duration: "40-50분",
+      status: "available",
+      vocab: 52
+    },
+    {
+      week: 10,
+      title: "경기 후 대화 - Post-Game",
+      subtitle: "Post-Game Talk & Feedback",
+      topics: ["코치 복기", "성적 리뷰", "영상 분석", "훈련 과제", "회복 프로토콜", "일정 정보"],
+      difficulty: "⭐⭐⭐⭐☆",
+      duration: "40-50분",
+      status: "available",
+      vocab: 51
     }
   ];
 
